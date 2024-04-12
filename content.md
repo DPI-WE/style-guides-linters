@@ -1,6 +1,6 @@
 # Style 🕺💃
 
-## Introduction to Clean Code Practices
+## Introduction to Style Guides and Linters
 Writing clean code is essential for maintaining a healthy codebase, especially in collaborative environments. Clean code practices not only make your application easier to read and maintain but also improve its overall performance and reliability. In this lesson, we'll explore the importance of adhering to style guides, utilizing linters, and maintaining consistency throughout your projects.
 
 ## Why Style Guides Matter
