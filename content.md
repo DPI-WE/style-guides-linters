@@ -16,7 +16,12 @@ A style guide provides a coherent set of rules for code formatting and best prac
 Linters are tools that help identify issues like syntax errors, stylistic errors, and other potential problems before they become more serious. They play a vital role in maintaining code quality.
 
 ## RuboCop 🤖
-RuboCop is a static code analyzer for Ruby, based on the [community style guide]((https://rubystyle.guide/)). It can also format code, fixing issues automatically.
+[RuboCop](https://github.com/rubocop/rubocop) is a static code analyzer for Ruby, based on the [community style guide]((https://rubystyle.guide/)). It can also format code, fixing issues automatically.
+
+<!-- 
+
+https://github.com/rubocop/rubocop-rails
+ -->
 
 ### Integrating RuboCop
 To integrate RuboCop into your Rails project, follow these steps:
@@ -36,6 +41,10 @@ end
 
 3. Create a `.rubocop.yml` file at the root of your project to customize rules if necessary.
 
+```bash
+touch .rubocop.yml
+```
+
 4. To analyze your project, run:
 ```bash
 rubocop
@@ -47,8 +56,17 @@ rubocop -a
 ```
 
 ### Visual Studio Code Extensions for Rubocop
-- [VSCode RuboCop](https://marketplace.visualstudio.com/items?itemName=rubocop.vscode-rubocop): Integrates RuboCop into VSCode, providing real-time feedback and autocorrection features directly in your editor.
+[VSCode RuboCop](https://marketplace.visualstudio.com/items?itemName=rubocop.vscode-rubocop) integrates RuboCop into VSCode, providing real-time feedback and autocorrection features directly in your editor.
 
+![](assets/underline.png)
+
+![](assets/suggestions.png)
+
+![](assets/customize.png)
+
+You can also use the command pallette (⌘ + shift + p) to call 'Format Document' to auto-correct any file using rubocop.
+
+Consider adding the [rubocop-rails](https://github.com/rubocop/rubocop-rails) gem if you prefer to follow best practices for rails apps (instead of customizing to your preferences).
 
 ## ESLint
 [ESLint](https://eslint.org/) is a static code analyzer for JavaScript. It can also format code, fixing issues automatically.
@@ -62,18 +80,34 @@ npm install eslint --save-dev
 
 2. Initialize ESLint to create an .eslintrc configuration file.
 ```bash
-eslint --init
+npx eslint --init
 ```
 
 <aside>
 During the initialization, you will be asked a series of questions about your coding style preferences and your environment (such as which framework you are using, whether you use React, etc.). You can also choose to extend popular configurations like the Airbnb style guide.
 </aside>
 
-3. Customize the configuration to extend popular style guides like Airbnb.
+3. Customize the configuration. Your `.eslintrc` should look something like this.
+
 ```json
 {
-  "extends": "airbnb"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "airbnb-base",
+    "eslint:recommended" 
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "import/no-unresolved": 0
+  }
 }
+
 ```
 
 4. Lint your JavaScript files.
@@ -87,24 +121,26 @@ For a more comprehensive check, you can run ESLint on all files in a directory l
 npx eslint .
 ```
 
-This command will lint all JavaScript files in the current directory and its subdirectories. If you want to specify a particular pattern, you can do so using glob patterns.
-
-```bash
-npx eslint "src/**/*.js"
-```
-
 5. Fix Issues Automatically
 ESLint can automatically fix many of the issues it detects. To enable this feature, use the `--fix` option.
 
 ```bash
-npx eslint yourfile.js --fix
+npx eslint . --fix
 ```
 This will modify the files where possible to conform to the style rules defined in your configuration.
 
-<!-- TODO: add script so you can run `npm lint` -->
+You can also add a lint script to your package.json. This way you'll call `npm run lint` to lint your Javascript files.
+
+```json
+"scripts": {
+  "lint": "eslint ."
+}
+```
 
 ### Visual Studio Code Extensions for ESLint
 - [ESLint VSCode Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): Integrates ESLint into VSCode enabling real-time linting.
+
+![](assets/eslint-vscode.png)
 
 ## HTML, CSS and ERB Formatting
 It's essential to maintain clean code in your HTML, CSS, and ERB templates as well.
@@ -150,3 +186,4 @@ Adhering to style guides and utilizing linters are practices that significantly 
 - [Airbnb's Javascript Style Guide](https://github.com/airbnb/javascript): Insights into Airbnb's appraoch to Javascript coding standards.
 - [W3 School's Javascript Conventions](https://www.w3schools.com/js/js_conventions.asp)
 - [HTMLBeautifier](https://github.com/threedaymonk/htmlbeautifier/): Tool for formatting HTML.erb files.
+- [Rufo: (Ruby formatter)](https://marketplace.visualstudio.com/items?itemName=mbessey.vscode-rufo): VS Code extension for formatting ruby files using the [rufo](https://github.com/ruby-formatter/rufo) gem.
