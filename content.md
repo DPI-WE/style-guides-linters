@@ -1,4 +1,4 @@
-# Style 🕺💃
+# Style Guides and Linters 🕺💃
 
 ## Introduction to Style Guides and Linters
 Writing clean and maintainable code is crucial in software development, particularly when working in teams. In this lesson, we'll delve into the importance of adhering to style guides and using linters to enforce these standards in Ruby on Rails projects. We'll also guide you through setting up RuboCop and ESLint in your project using Visual Studio Code.
