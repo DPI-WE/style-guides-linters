@@ -175,47 +175,6 @@ end
 
 <!-- TODO: add config steps? -->
 
-## Quiz
-- Why are style guides important in software development?
-- They make the code more colorful.
-  - Not correct. Style guides focus on formatting and best practices.
-- They ensure code is consistent and easy to understand.
-  - Correct! Style guides provide a set of rules for code formatting and best practices.
-- They speed up the execution of code.
-  - Not correct. Style guides do not affect code execution speed.
-{: .choose_best #importance_of_style_guides title="Importance of Style Guides" points="1" answer="2"}
-
-- What is the primary function of a linter?
-- To execute the code.
-  - Not correct. Linters do not execute code.
-- To identify and fix syntax and stylistic errors.
-  - Correct! Linters help maintain code quality by identifying issues.
-- To compile the code.
-  - Not correct. Linters do not compile code.
-{: .choose_best #function_of_linter title="Function of a Linter" points="1" answer="2"}
-
-- Which gem can be used to enforce Ruby style guidelines in a Rails project?
-- `faker`
-  - Not correct. Faker is used to generate fake data.
-- `devise`
-  - Not correct. Devise is used for authentication.
-- `rubocop`
-  - Correct! RuboCop is used for enforcing Ruby style guidelines.
-{: .choose_best #ruby_style_gem title="Gem for Ruby Style Guidelines" points="1" answer="3"}
-
-- ESLint can automatically fix many of the issues it detects in JavaScript files.
-- True
-  - Correct! ESLint has an option to automatically fix issues.
-- False
-  - Not correct. ESLint can indeed fix many issues automatically.
-{: .choose_best #eslint_fix title="ESLint Automatic Fix" points="1" answer="1"}
-
-- Using a linter ensures that your code has no runtime errors.
-- True
-  - Not correct. Linters identify syntax and stylistic errors, but not runtime errors.
-- False
-  - Correct! Linters do not guarantee the absence of runtime errors.
-{: .choose_best #linter_runtime_errors title="Linter and Runtime Errors" points="1" answer="2"}
 
 ## Conclusion
 Adhering to style guides and utilizing linters are practices that significantly enhance the quality of your code. They ensure your code remains clean, consistent, readable and maintainable, facilitating better collaboration and fewer bugs. By incorporating these tools into your development workflow, you promote a higher standard of coding practices across your team.
@@ -228,6 +187,3 @@ Adhering to style guides and utilizing linters are practices that significantly 
 - [W3 School's Javascript Conventions](https://www.w3schools.com/js/js_conventions.asp)
 - [HTMLBeautifier](https://github.com/threedaymonk/htmlbeautifier/): Tool for formatting HTML.erb files.
 - [Rufo: (Ruby formatter)](https://marketplace.visualstudio.com/items?itemName=mbessey.vscode-rufo): VS Code extension for formatting ruby files using the [rufo](https://github.com/ruby-formatter/rufo) gem.
-
-## Follow Up Exercise
-Integrate RuboCop into your Rails project and configure it using a `.rubocop.yml` file. Run RuboCop to identify and fix issues in your code.
