@@ -16,7 +16,7 @@ A style guide provides a coherent set of rules for code formatting and best prac
 Linters are tools that help identify issues like syntax errors, stylistic errors, and other potential problems before they become more serious. They play a vital role in maintaining code quality.
 
 ## RuboCop 🤖
-[RuboCop](https://github.com/rubocop/rubocop) is a static code analyzer for Ruby, based on the [community style guide]((https://rubystyle.guide/)). It can also format code, fixing issues automatically.
+[RuboCop-Rails-Omakase](https://github.com/rails/rubocop-rails-omakase) — a specialized form of [RuboCop](https://github.com/rubocop/rubocop) — is a static code analyzer for Ruby, based on the [community style guide]((https://rubystyle.guide/)). It can also format code, fixing issues automatically.
 
 <!-- 
 
@@ -26,13 +26,13 @@ https://github.com/rubocop/rubocop-rails
 ### Integrating RuboCop
 To integrate RuboCop into your Rails project, follow these steps:
 
-1. Add RuboCop to your Gemfile.
+1. Add RuboCop-Rails-Omakase to your Gemfile.
 ```ruby
 # only needed in the development environment
 group :development do
   ...
   # Set the require option to false, as it is a standalone tool.  
-  gem 'rubocop', require: false
+  gem "rubocop-rails-omakase", require: false
   ...
 end
 ```
@@ -44,13 +44,28 @@ end
 ```bash
 touch .rubocop.yml
 ```
+4. Replace anything already in `.rubocop.yml` with this:
+```
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
 
-4. To analyze your project, run:
+AllCops:
+  NewCops: enable
+  Exclude:
+    - node_modules/**/*
+    - public/**/*
+    - vendor/**/*
+
+Style/MixinGrouping:
+  Enabled: false
+```
+
+5. To analyze your project, run:
 ```bash
 rubocop
 ```
 
-5. To automatically fix issues, run:
+6. To automatically fix issues, run:
 ```bash
 rubocop -a
 ```
