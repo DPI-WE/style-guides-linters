@@ -16,7 +16,7 @@ A style guide provides a coherent set of rules for code formatting and best prac
 Linters are tools that help identify issues like syntax errors, stylistic errors, and other potential problems before they become more serious. They play a vital role in maintaining code quality.
 
 ## RuboCop 🤖
-[RuboCop-Rails-Omakase](https://github.com/rails/rubocop-rails-omakase) — a specialized form of [RuboCop](https://github.com/rubocop/rubocop) — is a static code analyzer for Ruby, based on the [community style guide]((https://rubystyle.guide/)). It can also format code, fixing issues automatically.
+[RuboCop-Rails-Omakase](https://github.com/rails/rubocop-rails-omakase) — a specialized form of [RuboCop](https://github.com/rubocop/rubocop) — is a static code analyzer for Ruby, based on the [community style guide](https://rubystyle.guide/). It can also format code, fixing issues automatically.
 
 <!-- 
 
@@ -45,7 +45,7 @@ end
 touch .rubocop.yml
 ```
 4. Replace anything already in `.rubocop.yml` with this:
-```
+```yaml
 inherit_gem:
   rubocop-rails-omakase: rubocop.yml
 
