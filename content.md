@@ -1,24 +1,21 @@
 # Style Guides and Linters 🕺💃
 
 ## Introduction to Style Guides and Linters
-
 Writing clean and maintainable code is crucial in software development, particularly when working in teams. In this lesson, we'll delve into the importance of adhering to style guides and using linters to enforce these standards in Ruby on Rails projects. We'll also guide you through setting up RuboCop and ESLint in your project using Visual Studio Code.
 
 ## Why Style Guides Matter
-
 A style guide provides a coherent set of rules for code formatting and best practices within a programming language. Adhering to a style guide ensures that code is consistent and easy to understand, reducing the mental overhead for developers navigating the codebase.
 
-## Recommended Ruby Style Guides
 
+## Recommended Ruby Style Guides
 - [Community Ruby Style Guide](https://rubystyle.guide/): Community maintained guidelines based on the principle "Programs must be written for people to read, and only incidentally for machines to execute."[*](https://rubystyle.guide/#guiding-principles)
 - [Shopify's Ruby Style Guide](https://ruby-style-guide.shopify.dev/): Offers conventions tailored to large-scale applications, emphasizing clarity and scalability.
 
-## Linters and Code Analyzers
 
+## Linters and Code Analyzers
 Linters are tools that help identify issues like syntax errors, stylistic errors, and other potential problems before they become more serious. They play a vital role in maintaining code quality.
 
 ## RuboCop 🤖
-
 [RuboCop-Rails-Omakase](https://github.com/rails/rubocop-rails-omakase) — a specialized form of [RuboCop](https://github.com/rubocop/rubocop) — is a static code analyzer for Ruby, based on the [community style guide](https://rubystyle.guide/). It can also format code, fixing issues automatically.
 
 <!-- 
@@ -27,11 +24,9 @@ https://github.com/rubocop/rubocop-rails
  -->
 
 ### Integrating RuboCop
-
 To integrate RuboCop into your Rails project, follow these steps:
 
 1. Add RuboCop-Rails-Omakase to your Gemfile.
-
 ```ruby
 # only needed in the development environment
 group :development do
@@ -49,9 +44,7 @@ end
 ```bash
 touch .rubocop.yml
 ```
-
 4. Replace anything already in `.rubocop.yml` with this:
-
 ```yaml
 inherit_gem:
   rubocop-rails-omakase: rubocop.yml
@@ -68,19 +61,16 @@ Style/MixinGrouping:
 ```
 
 5. To analyze your project, run:
-
 ```bash
 rubocop
 ```
 
 6. To automatically fix issues, run:
-
 ```bash
 rubocop -a
 ```
 
 ### Visual Studio Code Extensions for Rubocop
-
 [VSCode RuboCop](https://marketplace.visualstudio.com/items?itemName=rubocop.vscode-rubocop) integrates RuboCop into VSCode, providing real-time feedback and autocorrection features directly in your editor.
 
 ![](assets/underline.png)
@@ -94,11 +84,9 @@ You can also use the command pallette (⌘ + shift + p) to call 'Format Document
 Consider adding the [rubocop-rails](https://github.com/rubocop/rubocop-rails) gem if you prefer to follow best practices for rails apps (instead of customizing to your preferences).
 
 ## ESLint
-
 [ESLint](https://eslint.org/) is a static code analyzer for JavaScript. It can also format code, fixing issues automatically.
 
 ### Integrating ESLint
-
 1. Install ESLint globally or in your project.
 
 ```bash
@@ -106,7 +94,6 @@ npm install eslint --save-dev
 ```
 
 2. Initialize ESLint to create an .eslintrc configuration file.
-
 ```bash
 npx eslint --init
 ```
@@ -143,7 +130,6 @@ During the initialization, you will be asked a series of questions about your co
 ```bash
 npx eslint yourfile.js
 ```
-
 For a more comprehensive check, you can run ESLint on all files in a directory like this:
 
 ```bash
@@ -156,7 +142,6 @@ ESLint can automatically fix many of the issues it detects. To enable this featu
 ```bash
 npx eslint . --fix
 ```
-
 This will modify the files where possible to conform to the style rules defined in your configuration.
 
 You can also add a lint script to your package.json. This way you'll call `npm run lint` to lint your Javascript files.
@@ -168,13 +153,11 @@ You can also add a lint script to your package.json. This way you'll call `npm r
 ```
 
 ### Visual Studio Code Extensions for ESLint
-
 - [ESLint VSCode Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): Integrates ESLint into VSCode enabling real-time linting.
 
 ![](assets/eslint-vscode.png)
 
 ## HTML, CSS and ERB Formatting
-
 It's essential to maintain clean code in your HTML, CSS, and ERB templates as well.
 
 - [HTMLLint](https://html-lint.com/): Provides a free online validator and reformatter tool for HTML.
@@ -208,7 +191,6 @@ end
 <!-- TODO: add config steps? -->
 
 ## Quiz
-
 - Why are style guides important in software development?
 - They make the code more colorful.
   - Not correct. Style guides focus on formatting and best practices.
@@ -251,11 +233,9 @@ end
 {: .choose_best #linter_runtime_errors title="Linter and Runtime Errors" points="1" answer="2"}
 
 ## Conclusion
-
 Adhering to style guides and utilizing linters are practices that significantly enhance the quality of your code. They ensure your code remains clean, consistent, readable and maintainable, facilitating better collaboration and fewer bugs. By incorporating these tools into your development workflow, you promote a higher standard of coding practices across your team.
 
 ## Resources
-
 - [RuboCop Documentation](https://github.com/rubocop/rubocop): Detailed information on configuring and using RuboCop in your Rails projects.
 - [Shopify's Ruby Style Guide](https://ruby-style-guide.shopify.dev/): Insights into Shopify's approach to Ruby coding standards.
 - [Google HTML/CSS Style Guide](https://google.github.io/styleguide/htmlcssguide.html): Guidelines for writing clean, consistent HTML and CSS.
