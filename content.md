@@ -27,48 +27,53 @@ https://github.com/rubocop/rubocop-rails
 To integrate RuboCop into your Rails project, follow these steps:
 
 1. Add RuboCop-Rails-Omakase to your Gemfile.
-```ruby
-# only needed in the development environment
-group :development do
-  ...
-  # Set the require option to false, as it is a standalone tool.  
-  gem "rubocop-rails-omakase", require: false
-  ...
-end
-```
+
+    ```ruby
+    # only needed in the development environment
+    group :development do
+      ...
+      # Set the require option to false, as it is a standalone tool.  
+      gem "rubocop-rails-omakase", require: false
+      ...
+    end
+    ```
 
 2. Run `bundle install` to install the gem.
 
 3. Create a `.rubocop.yml` file at the root of your project to customize rules if necessary.
 
-```bash
-touch .rubocop.yml
-```
+    ```bash
+    touch .rubocop.yml
+    ```
+
 4. Replace anything already in `.rubocop.yml` with this:
-```yaml
-inherit_gem:
-  rubocop-rails-omakase: rubocop.yml
 
-AllCops:
-  NewCops: enable
-  Exclude:
-    - node_modules/**/*
-    - public/**/*
-    - vendor/**/*
+    ```yaml
+    inherit_gem:
+      rubocop-rails-omakase: rubocop.yml
 
-Style/MixinGrouping:
-  Enabled: false
-```
+    AllCops:
+      NewCops: enable
+      Exclude:
+        - node_modules/**/*
+        - public/**/*
+        - vendor/**/*
+
+    Style/MixinGrouping:
+      Enabled: false
+    ```
 
 5. To analyze your project, run:
-```bash
-rubocop
-```
+
+    ```bash
+    rubocop
+    ```
 
 6. To automatically fix issues, run:
-```bash
-rubocop -a
-```
+
+    ```bash
+    rubocop -a
+    ```
 
 ### Visual Studio Code Extensions for Rubocop
 [VSCode RuboCop](https://marketplace.visualstudio.com/items?itemName=rubocop.vscode-rubocop) integrates RuboCop into VSCode, providing real-time feedback and autocorrection features directly in your editor.
@@ -89,68 +94,69 @@ Consider adding the [rubocop-rails](https://github.com/rubocop/rubocop-rails) ge
 ### Integrating ESLint
 1. Install ESLint globally or in your project.
 
-```bash
-npm install eslint --save-dev
-```
+    ```bash
+    npm install eslint --save-dev
+    ```
 
 2. Initialize ESLint to create an .eslintrc configuration file.
-```bash
-npx eslint --init
-```
 
-<aside>
-During the initialization, you will be asked a series of questions about your coding style preferences and your environment (such as which framework you are using, whether you use React, etc.). You can also choose to extend popular configurations like the Airbnb style guide.
-</aside>
+    ```bash
+    npx eslint --init
+    ```
+
+    During the initialization, you will be asked a series of questions about your coding style preferences and your environment (such as which framework you are using, whether you use React, etc.). You can also choose to extend popular configurations like the Airbnb style guide.
 
 3. Customize the configuration. Your `.eslintrc` should look something like this.
 
-```json
-{
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": [
-    "airbnb-base",
-    "eslint:recommended" 
-  ],
-  "parserOptions": {
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "rules": {
-    "import/no-unresolved": 0
-  }
-}
-
-```
+    ```json
+    {
+      "env": {
+        "browser": true,
+        "es2021": true
+      },
+      "extends": [
+        "airbnb-base",
+        "eslint:recommended" 
+      ],
+      "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+      },
+      "rules": {
+        "import/no-unresolved": 0
+      }
+    }
+    ```
 
 4. Lint your JavaScript files.
 
-```bash
-npx eslint yourfile.js
-```
-For a more comprehensive check, you can run ESLint on all files in a directory like this:
+    ```bash
+    npx eslint yourfile.js
+    ```
 
-```bash
-npx eslint .
-```
+    For a more comprehensive check, you can run ESLint on all files in a directory like this:
+
+    ```bash
+    npx eslint .
+    ```
 
 5. Fix Issues Automatically
-ESLint can automatically fix many of the issues it detects. To enable this feature, use the `--fix` option.
 
-```bash
-npx eslint . --fix
-```
-This will modify the files where possible to conform to the style rules defined in your configuration.
+    ESLint can automatically fix many of the issues it detects. To enable this feature, use the `--fix` option.
 
-You can also add a lint script to your package.json. This way you'll call `npm run lint` to lint your Javascript files.
+    ```bash
+    npx eslint . --fix
+    ```
 
-```json
-"scripts": {
-  "lint": "eslint ."
-}
-```
+    This will modify the files where possible to conform to the style rules defined in your configuration.
+
+    You can also add a lint script to your package.json. This way you'll call `npm run lint` to lint your Javascript files.
+
+    ```json
+    "scripts": {
+      "lint": "eslint ."
+    }
+    ```
 
 ### Visual Studio Code Extensions for ESLint
 - [ESLint VSCode Extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): Integrates ESLint into VSCode enabling real-time linting.
@@ -174,19 +180,19 @@ We can leverage the Formatter API from the vscode to format our ERB files, so no
 
 1. Install [HTMLBeautifier](https://github.com/threedaymonk/htmlbeautifier) and [VSCode ERB Beautify](https://marketplace.visualstudio.com/items?itemName=aliariff.vscode-erb-beautify)
 
-```ruby
-# only needed in the development environment
-group :development do
-  ...
-  # Set the require option to false, as it is a standalone tool.  
-  gem 'htmlbeautifier', require: false
-  ...
-end
+    ```ruby
+    # only needed in the development environment
+    group :development do
+      ...
+      # Set the require option to false, as it is a standalone tool.  
+      gem 'htmlbeautifier', require: false
+      ...
+    end
 ```
 
 2. Use the command pallette (⌘ + shift + p) to call 'Format Document'.
 
-![](assets/format.png)
+    ![](assets/format.png)
 
 <!-- TODO: add config steps? -->
 
