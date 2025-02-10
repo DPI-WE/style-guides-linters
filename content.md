@@ -182,19 +182,19 @@ We can leverage the Formatter API from the vscode to format our ERB files, so no
 
 1. Install [HTMLBeautifier](https://github.com/threedaymonk/htmlbeautifier) and [VSCode ERB Beautify](https://marketplace.visualstudio.com/items?itemName=aliariff.vscode-erb-beautify)
 
-```ruby
-# only needed in the development environment
-group :development do
-  ...
-  # Set the require option to false, as it is a standalone tool.  
-  gem 'htmlbeautifier', require: false
-  ...
-end
+    ```ruby
+    # only needed in the development environment
+    group :development do
+      ...
+      # Set the require option to false, as it is a standalone tool.  
+      gem 'htmlbeautifier', require: false
+      ...
+    end
 ```
 
 2. Use the command pallette (⌘ + shift + p) to call 'Format Document'.
 
-![](assets/format.png)
+    ![](assets/format.png)
 
 <!-- TODO: add config steps? -->
 
