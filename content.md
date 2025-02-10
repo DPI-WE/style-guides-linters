@@ -104,9 +104,9 @@ Consider adding the [rubocop-rails](https://github.com/rubocop/rubocop-rails) ge
     npx eslint --init
     ```
 
-<aside>
-During the initialization, you will be asked a series of questions about your coding style preferences and your environment (such as which framework you are using, whether you use React, etc.). You can also choose to extend popular configurations like the Airbnb style guide.
-</aside>
+    <aside>
+    During the initialization, you will be asked a series of questions about your coding style preferences and your environment (such as which framework you are using, whether you use React, etc.). You can also choose to extend popular configurations like the Airbnb style guide.
+    </aside>
 
 3. Customize the configuration. Your `.eslintrc` should look something like this.
 
